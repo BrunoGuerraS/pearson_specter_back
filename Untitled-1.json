@@ -1,0 +1,40 @@
+{
+	"date_start": "2023-12-30",
+	"date_end": "2023-12-30",
+	"description": "Text detail test",
+	"answer1": "answer",
+	"answer2": "answer",
+	"answer3": "answer",
+	"answer4": "answer",
+	"answer5": "answer",
+	"answer6": "answer",
+	"answer7": "answer",
+	"answer8": "answer",
+	"evidence": [],
+	"type_report": 1,
+	"person_involved": [
+		{
+			"name": "Siro",
+			"last_name": "Alegria",
+			"role": "admin",
+			"company": "the joquin dead",
+			"otros": "lorem ipso dolor"
+		},
+		{
+			"name": "Mark",
+			"last_name": "Huaman",
+			"role": "admin",
+			"company": "the joquin dead",
+			"otros": "lorem ipso dolor"
+		}
+	],
+	"place": [
+		{
+			"name": "chiclayo"
+		},
+		{
+			"name": "lima"
+		}
+	],
+	"status" : 1
+}
