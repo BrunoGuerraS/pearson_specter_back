@@ -1,5 +1,6 @@
 import * as express from "express";
 import { ReportsController } from "../controllers/reports.controller";
+import { validateJwt } from "../middleware";
 import fileReader from "../middleware/fileReader";
 import { organizeDataReport } from "../middleware/organizeDataReport";
 import validatorHandler from "../middleware/validatosHandler";
@@ -11,7 +12,7 @@ export const reportRouter = express.Router();
 
 reportRouter.get("/", getAll);
 
-reportRouter.get("/:id", validatorHandler(getReportSchema, "params"), getReportByIdClient);
+reportRouter.get("/:id", validateJwt,validatorHandler(getReportSchema, "params"), getReportByIdClient);
 
 reportRouter.post(
   "/",

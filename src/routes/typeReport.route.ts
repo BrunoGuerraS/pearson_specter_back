@@ -5,5 +5,5 @@ import { validateJwt } from "../middleware";
 export const typeRouter = express.Router();
 const { getAll, findByOne } = new TypeReportController();
 
-typeRouter.get("/", validateJwt, getAll);
+typeRouter.get("/", getAll);
 typeRouter.get("/:id", validateJwt, findByOne);

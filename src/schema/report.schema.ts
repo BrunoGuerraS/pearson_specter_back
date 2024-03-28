@@ -1,6 +1,6 @@
 import { z } from "zod";
 //this part will manage the validation of the body in the request
-const id_cliente = z.string().refine(
+const id = z.string().refine(
   (value) => {
     const id = parseInt(value);
     return !isNaN(id) && id >= 1000 && id <= 10000;
@@ -64,10 +64,10 @@ export const createReportSchema = z.object({
 });
 
 export const updateReportSchema = z.object({
-  id_cliente,
+  id,
   status,
 });
 
 export const getReportSchema = z.object({
-  id_cliente,
+  id,
 });

@@ -10,7 +10,7 @@ export class ReportService {
   }
 
   async findReport(id: any) {
-    const report = await reportRepository.find({ where: { id_client: id } });
+    const report = await reportRepository.findOne({ where: { id_client: id } });
     return report;
   }
 
