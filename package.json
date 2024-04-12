@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/index.js",
     "tsc": "tsc",
-    "dev": "ts-node-dev ./src/index.ts",
+    "dev": "ts-node-dev ./src/server.ts",
     "typeorm": "typeorm-ts-node-commonjs",
     "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/lib/data-sourse.ts",
     "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/lib/data-sourse.ts",

@@ -1,29 +1,16 @@
-import * as cookieParser from "cookie-parser";
-import * as cors from "cors";
-import * as express from "express";
-import "reflect-metadata";
-import {
-  boomErrorHandler,
-  errorHandler,
-  logErrors,
-} from "./middleware/errorHandler";
-import RESTRouterApi from "./routes";
+import express, { Application, Request, Response } from "express";
 
-const corsOptions = {
-  origin: ["http://localhost:5173", "http://localhost:3000"],
-  credentials: true,
+const RESTRouterApi = (app: Application) => {
+  const router = express.Router();
+  app.use("/api/v1", router);
+  router.use("/reports", (req: Request, res: Response)=>{ res.send("reports") });
+  router.use("/typeReports", (req: Request, res: Response)=>{ res.send("typeReports") });
+  router.use("/status", (req: Request, res: Response)=>{ res.send("status") });
+  router.use("/register", (req: Request, res: Response)=>{ res.send("register") });
+  router.use("/login", (req: Request, res: Response)=>{ res.send("login") });
+  router.use("/logout", (req: Request, res: Response)=>{ res.send("logout") });
+  router.use("/refresh", (req: Request, res: Response)=>{ res.send("refresh") });
+  router.use("/user", (req: Request, res: Response)=>{ res.send("user") })
 };
 
-const createApp = async () => {
-  const app = express();
-  app.use(cors(corsOptions));
-  app.use(cookieParser());
-  app.use(express.json());
-  RESTRouterApi(app);
-  app.use(logErrors);
-  app.use(boomErrorHandler);
-  app.use(errorHandler);
-  return app;
-};
-
-export default createApp;
+export default RESTRouterApi;

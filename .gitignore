@@ -2,3 +2,4 @@
 .env
 /build/
 /mysql_data/
+/z/
